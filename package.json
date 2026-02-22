@@ -1,0 +1,28 @@
+{
+  "name": "nubank",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/Rafael-Wener/Nubank#readme",
+  "bugs": {
+    "url": "https://github.com/Rafael-Wener/Nubank/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rafael-Wener/Nubank.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "body-parser": "^2.2.2",
+    "ejs": "^4.0.1",
+    "express": "^5.2.1",
+    "mongoose": "^9.2.1",
+    "mysql2": "^3.17.4"
+  }
+}
