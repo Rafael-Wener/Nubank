@@ -8,30 +8,38 @@
  body {
     background-color: #820AD1;
     padding: 40px 20px 25px;
-    color: white;
+    color: #111;
  }
 
- .header_icons {
+ .header {
+    background-color: #820AD1;
+    padding: 40px 20px 25px;
+    color: #111;
+}
+ .header_icon {
     display: flex; 
     justify-content: space-between; 
     margin-bottom: 30px;
  }
 
- .profile_icons {
+ .profile_icon {
     width: 45px; 
     height: 45px;
     background-color: rgba (255, 255, 255,0.2);
     border-radius: 50%;
 }
-.geeting {
+.greeting {
     font-size: 18px;
     font-weight: 600;
 }
 
 .card_conta{
-    background-color: white;
-    padding: 25px;
-    margin-top: -10px;
+    background-color: #111;
+    padding: 70px;
+    margin-top: 0px;
+    margin-left: -20px;
+    margin-right: -20px;
+    color: white;
 }
 
 .card_label{
@@ -40,6 +48,7 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
+    color: white;
 }
 
 .saldo {
@@ -47,7 +56,7 @@
     font-weight: 700;
 }
 
-.atalho_container {
+.atalhos_container {
     display: flex;
     overflow-x: auto;
     padding: 20px;
@@ -62,10 +71,10 @@
     min-width: 80px;
 }
 
-.icon_cinrcle {
+.icon_circle {
     width: 70px;
     height: 70px;
-    background-color: #eeeeee;
+    background-color: grey;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -76,7 +85,11 @@
 .btn_label {
     font-size: 13px;
     font-weight: 600;
-    color: #111;
+    color: grey;
+    display: flex;
+    margin-top: -20px;
+    margin-left: 23px;
+    padding: 3px;
 }
 
 .card_info {
