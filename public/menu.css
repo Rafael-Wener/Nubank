@@ -2,18 +2,18 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
- }
+    font-family: 'Inter', sans-serif;
 
+}
  body {
-    color: #111;
-    background-color: #23272A;
+    color: #000000;
+    background-color: black;
  }
 
  .header {
-    background-color: #820AD1;
+    background-color: #6a2399;
     padding: 20px 20px 25px;
-    color: #111;
+    color: white;
 
 }
  .header_icon {
@@ -22,12 +22,7 @@
     margin-bottom: 30px;
  }
 
- .profile_icon {
-    width: 45px; 
-    height: 45px;
-    background-color: rgba (255, 255, 255,0.2);
-    border-radius: 50%;
-}
+
 .greeting {
     font-size: 25px;
     margin-left: 170px;
@@ -35,14 +30,15 @@
 }
 
 .card_conta{
-    background-color: #2d3237;
+    background-color: black;
     padding: 20px;
     margin-left: 170px;
     margin-right: 170px;
     color: white;
     border: 2px solid black;
     border-radius: 8px 12px;
-    margin-top: 40px ;
+    margin-top: 20px ;
+    margin-bottom: 40px;
     box-shadow: 0px 4px 20px -2px rgb(0, 0, 0, 0.5);
     transition: 0.3s ease;
 }
@@ -72,7 +68,7 @@
     padding: 20px;
     gap: 120px;
     justify-content: flex-start;
-    margin-left: 180px  ;
+    margin-left: 160px  ;
 }
 
 .btn_atalho {
@@ -85,7 +81,7 @@
 .icon_circle {
     width: 90px;
     height: 90px;
-    background-color: #2d3237;
+    background-color: #292929;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -103,7 +99,7 @@
 }
 
 .icon_circle img {
-    width: 35%;
+    width: 25%;
     filter: invert(1);
 }
 
@@ -125,4 +121,53 @@
     gap: 15px;
     font-weight: 600;
     font-size: 14px;
+}
+
+.btn_profile {
+    display: flex;
+    margin-left: 170px;
+    align-items: center;
+    min-width: 80px;
+
+}
+
+.icon_profile {
+    width: 90px;
+    height: 90px;
+    background-color: #9a35dda8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    flex-direction: column;
+    transition: 0.3s ease;
+}
+
+
+.icon_profile img {
+    width: 40%;
+    filter: invert(1);
+}
+
+.icon_profile:hover{
+    transform: scale(1.12);
+}
+
+.divisor {
+    border:none;
+    height: 2px;
+    background-color: #313131;
+    margin: 20px 0px;
+    width: 100%;
+}
+
+.invest {
+    display: flex;
+    overflow-x: auto;
+    flex-direction: row;
+    padding: 20px;
+    gap: 120px;
+    justify-content: flex-start;
+    margin-left: 160px  ;
 }
