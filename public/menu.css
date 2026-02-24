@@ -29,7 +29,7 @@
     padding: 10px;
 }
 
-.card_conta{
+.card_conta {
     background-color: black;
     padding: 20px;
     margin-left: 170px;
@@ -43,12 +43,12 @@
     transition: 0.3s ease;
 }
 
-.card_conta:hover{
+.card_conta:hover {
     transform: scale(1.02);
 }
 
-.card_label{
-    font-size: 20px;
+.card_label {
+    font-size: 28px;
     font-weight: 600;
     display: flex;
     justify-content: space-between;
@@ -57,7 +57,7 @@
 }
 
 .saldo {
-    font-size: 40px; 
+    font-size: 27px; 
     font-weight: 700;
 }
 
@@ -170,4 +170,67 @@
     gap: 120px;
     justify-content: flex-start;
     margin-left: 160px  ;
+}
+
+.card_invest {
+    background-color: black;
+    padding: 20px;
+    margin-left: 170px;
+    margin-right: 170px;
+    color: white;
+    border: 2px solid black;
+    border-radius: 8px 12px;
+    margin-top: 20px ;
+    margin-bottom: 40px;
+    box-shadow: 0px 4px 20px -2px rgb(0, 0, 0, 0.5);
+    transition: 0.3s ease;
+    gap: 8px;
+}
+
+.invest_label {
+    font-size: 28px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.invest_label_sub {
+    font-size: 18px;
+    font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    color: #ffffffa4;
+
+}
+.investido {
+    font-size: 27px; 
+    font-weight: 700;
+}
+
+.card_invest:hover {
+    transform: scale(1.02);
+}
+
+.ganhos {
+    font-size: 16px;
+    font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    color: rgba(0, 255, 21, 0.644);  
+    margin-top: 16px;
+}
+
+.ganhos_sub {
+    font-size: 16px;
+    font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    color: #ffffffa4;
+    margin-top: 16px;
+    margin-right: 160px;
 }
