@@ -20,6 +20,7 @@
      background-color: #000000c0;
      padding: 10px 10px 10px;
      color: white;
+     display: block;
  }
 
  .greeting {
@@ -29,10 +30,12 @@
  }
 
  .greeting_dois {
-     font-size: 20px;
+     font-size: 18px;
      font-weight: 500;
-     margin-left: -480px;
-     margin-top: 5px;
+ }
+
+ .espacamento {
+     margin-left: 300px;
  }
 
  .btn_profile {
@@ -42,15 +45,17 @@
  }
 
  .icon_profile_proximo {
-     margin-left: 220px;
      align-items: center;
      margin-top: 10px;
  }
 
  .icon_profile_proximo img {
-     width: 3.5%;
+     width: 12px;
+     /* Tamanho pequeno e controlado */
      filter: invert(1);
      transform: scaleX(-1);
+     /* Mantém sua inversão de direção */
+     margin-bottom: 4px;
  }
 
  .btn_profile_dois {
@@ -122,18 +127,7 @@
  }
 
  .tab_item_active:hover {
-     color: #a33df5 !important
- }
-
- .linha_vertical {
-     border: none;
-     height: 3000px;
-     background-color: rgb(41, 41, 41);
-     width: 2px;
-     margin: 0 20px;
-     display: inline-block;
-     vertical-align: middle;
-     margin-left: 294px;
+     color: #a33df5 !important;
  }
 
  .divisor_vertical_container {
@@ -143,15 +137,13 @@
  }
 
  .link_limpo {
-     text-decoration: none;
-     color: inherit;
-     display: flex;
-     color: white;
+     display: inline-flex;
      align-items: center;
-     gap: 15px;
-     transition: 0.3s ease;
+     text-decoration: none;
+     color: white;
+     gap: 8px;
      cursor: pointer;
-     font-weight: 600;
+     transition: 0.3s;
  }
 
  .link_limpo:hover {
@@ -159,10 +151,29 @@
      color: #fcfcfc;
      font-weight: 600;
  }
+
+ .linha_vertical {
+     border: none;
+     background-color: rgb(109, 109, 109);
+     width: 2px;
+     height: 100vh;
+     /* Altura total da tela do usuário */
+     position: absolute;
+     /* Para ela não "empurrar" os outros elementos */
+     left: 306px;
+     /* Posiciona ela exatamente após a sidebar */
+     top: 0;
+     z-index: 10;
+ }
+
+ .linha_horizontal {
+     width: 100vw;
+     border: 1px solid rgb(109, 109, 109);
+ }
+
  .painel_container {
-    background-color: rgb(41, 41, 41);
-    margin-right: 1600px;
-    margin-bottom: 300px;
-    color: white;
-    margin-bottom: 300px;
+     background-color: rgb(41, 41, 41);
+     width: 310px;
+     height: 100vh;
+     color: white;
  }
