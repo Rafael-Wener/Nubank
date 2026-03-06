@@ -1,0 +1,155 @@
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+ body {
+    color: #000000;
+    background-color: black;
+ }
+
+ .header {
+    background-color: #6a2399;
+    padding: 0px 10px 18px;
+    color: white;
+ }
+
+ .header_low {
+    background-color: #6a2399c0;
+    padding: 10px 10px 0px;
+    color: white;
+}
+
+ .header_icon {
+    display: flex; 
+    justify-content: space-between; 
+    margin-bottom: 30px;
+ }
+
+.greeting {
+    font-size: 20px;
+    padding: 10px;
+}
+
+.atalhos_container {
+    display: flex;
+    overflow-x: auto;
+    flex-direction: row;
+    padding: 20px;
+    gap: 120px;
+    justify-content: flex-start;
+    margin-left: 160px  ;
+}
+
+.btn_atalho {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80px;
+}
+
+.icon_circle {
+    width: 90px;
+    height: 90px;
+    background-color: #292929;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    flex-direction: column;
+    box-shadow: 0px 4px 20px -2px rgb(0, 0, 0, 0.5);
+    border: 2px solid black;
+    border-radius: 50%;
+    transition: 0.3s ease;
+}
+
+.icon_circle:hover{
+    transform: scale(1.12);
+}
+
+.icon_circle img {
+    width: 25%;
+    filter: invert(1);
+}
+
+.btn_label {
+    font-size:15px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    margin-top: 8px;
+}
+
+.btn_profile {
+    display: flex;
+    margin-left: 170px;
+    align-items: center;
+    min-width: 80px;
+
+}
+
+.icon_profile {
+    width: 40px;
+    height: 40px;
+    background-color: #9a35dda8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    flex-direction: column;
+    transition: 0.3s ease;
+}
+
+
+.icon_profile img {
+    width: 40%;
+    filter: invert(1);
+}
+
+.icon_profile:hover{
+    transform: scale(1.12);
+}
+
+.mais img {
+    width: 1.25%;
+    filter: invert(1);
+    margin-bottom: -35px;
+}
+
+.greeting_header_low {
+    font-size: 50px;
+    padding: 10px
+}
+
+.tab_container {
+    display: flex;
+    gap: 25px;
+    padding: 10px 0;
+    margin-left: 20px;
+}
+
+.tab_item {
+    background: none;
+    border: none;
+    color: #ffffffa4; 
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    padding-bottom: 8px;
+    border-bottom: 2px solid transparent; 
+    transition: 0.3s;
+    padding: 10px;
+}
+
+.tab_item_active {
+    color: #ffffff;
+    border-bottom: 2px solid #820AD1;
+}
+
+.tab_imte:hover {
+    color: #ffffffff
+}
