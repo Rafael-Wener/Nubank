@@ -62,7 +62,7 @@
      display: flex;
      align-items: center;
      min-width: 80px;
-     margin-left: 300px;
+     margin-left: 20vw;
  }
 
  .icon_profile {
@@ -176,4 +176,5 @@
      width: 310px;
      height: 100vh;
      color: white;
+     z-index: 10;
  }
