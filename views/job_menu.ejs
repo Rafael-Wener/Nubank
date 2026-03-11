@@ -5,53 +5,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nu Empresas - Job</title>
-    <link rel="stylesheet" href="/job_menu.css">
+    <link rel="stylesheet" href="job_menu.css">
     <link rel="icon" href="/img/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <header class="header">
-        <div class="btn_profile">
-            <div class="icon_profile">
-                <img src="/img/do-utilizador.png" alt="">
-            </div>
-            <h1 class="greeting">Olá, Rafael</h1>
 
-            <div class="espacamento">
+    <div class="layout_wrapper">
+
+        <!-- SIDEBAR ESQUERDA -->
+        <aside class="painel_container">
+            <div class="sidebar_header">
+                <div class="icon_profile">
+                    <img src="/img/do-utilizador.png" alt="">
+                </div>
+                <h1 class="greeting">Olá, Rafael</h1>
+            </div>
+            <!-- PAINEL DA SIDEBAR ESQUERDA -->
+             <div class="painel_menu_container">
+                <h1 class="menu_lat_item">Menu</h1>
+                <button class="btn_menu_lat_item">
+                    <img src="/img/app-wallet-passes.png" alt="">Trabalhos</button>
+                <button class="btn_menu_lat_item">
+                    <img src="/img/painel-de-controle.png" alt="">Dashboard</button>
+                <button class="btn_menu_lat_item">
+                    <img src="/img/transacao.png" alt="">Transações</button>
+            </div>
+        </aside>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <div class="main_content">
+
+            <!-- TOPBAR -->
+            <div class="topbar">
                 <a href="/" class="link_limpo">
-                    <div class="icon_profile_proximo">
-                        <img src="/img/proximo.png" alt="">
-                    </div>
-                    <h1 class="greeting_dois">Trabalhos</h1>
+                    <img class="icon_voltar" src="/img/proximo.png" alt="">
+                    <span>Trabalhos</span>
                 </a>
             </div>
-        </div>
-    </header>
 
-    <hr class="linha_horizontal">
+            <hr class="linha_horizontal">
 
+            <!-- BODY -->
+            <div class="content_body">
+                <h1 class="page_title">Trabalhos</h1>
 
-    
-    <header class="header_low">
-        <div class="btn_profile_dois">
-            <h1 class="greeting_header_low">Trabalhos</h1>
-            <div class="tab_container">
-                <button class="tab_item active">Todos</button>
-                <button class="tab_item">Em andamento</button>
-                <button class="tab_item">Finalizados</button>
-                <button class="tab_item">Propostas</button>
+                <div class="tab_container">
+                    <button class="tab_item tab_item_active">Todos</button>
+                    <button class="tab_item">Em andamento</button>
+                    <button class="tab_item">Finalizados</button>
+                    <button class="tab_item">Propostas</button>
+                </div>  
             </div>
+
         </div>
-    </header>
 
-
-    <div class="divisor_vertical_container">
-        <hr class="linha_vertical">
     </div>
 
-    <div class="painel_container">
-    </div>
 </body>
 
 </html>

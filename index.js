@@ -1,9 +1,10 @@
 const express = require ('express');
-const bcrypt = require ('bcrypt');
+//const bcrypt = require ('bcrypt');
 const app = express();
-const mysql = require('mysql2');
-const path = require('path'); // Módulo nativo do Node, não precisa instalar
+//const mysql = require('mysql2');
+const path = require('path');
 const port = 3000;
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
@@ -22,7 +23,6 @@ app.get('/job', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log('Servidor rodando em http://localhost:'+port);
-
+    console.log('Servidor rodando em http://localhost:' + port);
 });
 //TERMINA
