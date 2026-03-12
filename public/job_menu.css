@@ -107,6 +107,8 @@ body {
     border-top: 2px solid rgb(109, 109, 109);
 }
 
+/*-- PAINEIS --*/
+
 .content_body {
     padding: 30px 36px;
 }
@@ -194,37 +196,73 @@ body {
     filter: invert(1);
 }
 
+
+/*-- CONTAINER DO BTN E INPUT --*/
+.search_group {
+    display: flex;
+    gap: 20px;
+    margin-left: auto;
+    align-items: center;
+    padding-left: 10px;
+}
 /*-- BOTÃO EXPORT --*/
 .btn_export {
-    display: flex !important;
+    display: flex;
     align-items: center;   
     justify-content: center;   
-    width: 100px !important;  
-    height: 32px !important;  
-    padding: 0 10px !important;
+    width: 100px ;  
+    height: 32px ;  
     background-color: #820AD1;
     border: none;
     border-radius: 4px;
     color: white;
     font-family: 'Inter', sans-serif;
-    font-size: 14px !important;
+    font-size: 14px;
     cursor: pointer;
-    margin-left: 750px;
-    transition: transform 0.3s ease;
+    transition: transform 0.4s ease;
 }
 
 .btn_export img {
-    width: 16px !important;
+    width: 16px ;
     height: auto;
-    margin-right: 8px !important; 
+    margin-right: 8px ; 
     filter: invert(1);
 }
 
 .btn_export:hover {
-    transform: scale(1.12);
+    transform: scale(1.06);
 }
 
-/*-- INPUT PESQUSISAR --*/
+/*-- INPUT PESQUISAR --*/
 .input_pesq {
-    
+    background-color: rgb(17, 17, 17) ;
+    display: flex ;
+    align-items: center ;
+    margin-left: 10vh;
+    outline: none;
+    border-radius: 30px;
+    height: 40px;
+    color: white;
+    border: 1px solid #313131;
+    padding: 0px 12px;
+    box-sizing: border-box;
+}
+
+.input_pesq:focus {
+    border-color: #820AD1;
+}
+
+.search_group img {
+    width: 20px;
+    height: 20px;
+    filter: invert(1);
+}
+
+.input_wrapper {
+    display: flex !important;
+    align-items: center !important;
+    background-color: rgba(8, 12, 19, 0.699) !important;
+    border: 1px solid #313131 !important;
+    border-radius: 20px !important; /* Mais arredondado como no seu print */
+    padding: 5px 15px !important;  /* Espaço interno para a lupa não grudar */
 }
