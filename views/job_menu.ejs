@@ -66,10 +66,10 @@
 
                     <div class="search_group">
                         <div class="input_wrapper">
-                            <img src="/img/lupa.png" alt="">
-                            <input type="text" placeholder="Nome do projeto" class="input_pesq">
+                            <input type="text" placeholder="Pesquisar..." class="input_pesq">
+                            <img src="/img/lupa.png" class="lupa_icon">
                         </div>
-                        <button class="btn_export">
+                        <button class="btn_export" onclick="abrirModal()">
                             <img src="/img/exportar.png" alt="">Criar
                         </button>
                     </div>
@@ -80,6 +80,24 @@
 
     </div>
 
+    <div id="modal_container" class="modal_overlay">
+        <div class="modal_content">
+            <h2>Adicionar Trabalho</h2>
+            <p>aqui vao vir os treco</p>
+            <button onclick="fecharModal()">Fechar</button>
+        </div>
+    </div>
+    <script>
+        function abrirModal() {
+            const modal = document.getElementById('modal_container');
+            modal.classList.add('mostrar');
+        }
+
+        function fecharModal() {
+            const modal = document.getElementById('modal_container');
+            modal.classList.remove('mostrar');
+        }
+    </script>
 </body>
 
 </html>

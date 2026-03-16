@@ -205,6 +205,7 @@ body {
     align-items: center;
     padding-left: 10px;
 }
+
 /*-- BOTÃO EXPORT --*/
 .btn_export {
     display: flex;
@@ -235,17 +236,11 @@ body {
 
 /*-- INPUT PESQUISAR --*/
 .input_pesq {
-    background-color: rgb(17, 17, 17) ;
-    display: flex ;
-    align-items: center ;
-    margin-left: 10vh;
-    outline: none;
-    border-radius: 30px;
-    height: 40px;
-    color: white;
-    border: 1px solid #313131;
-    padding: 0px 12px;
-    box-sizing: border-box;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    color: white !important;
+    flex: 1;
 }
 
 .input_pesq:focus {
@@ -263,6 +258,52 @@ body {
     align-items: center !important;
     background-color: rgba(8, 12, 19, 0.699) !important;
     border: 1px solid #313131 !important;
-    border-radius: 20px !important; /* Mais arredondado como no seu print */
-    padding: 5px 15px !important;  /* Espaço interno para a lupa não grudar */
+    border-radius: 20px !important;
+    padding: 5px 15px !important;
+    transition: all 0.3s ease;
+}
+
+.lupa_icon {
+    width: 18px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.input_wrapper:focus-within {
+    border-color: #820AD1 !important;
+    box-shadow: 0 0 8px rgba(130, 10, 209, 0.3);
+}
+
+.input_wrapper:focus-within .lupa_icon {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/*-- CAIXA DE CRIAÇÃO --*/
+.modal_overlay {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+}
+
+.modal_content {
+    background-color: #080c13; /* Cor igual ao seu fundo */
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid #313131; /* Borda cinza igual ao seu input */
+    width: 400px;
+    text-align: center;
+    color: white;
+}
+
+.modal_overlay.mostrar {
+    display: flex;
 }
