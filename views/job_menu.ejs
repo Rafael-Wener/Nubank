@@ -82,9 +82,28 @@
 
     <div id="modal_container" class="modal_overlay">
         <div class="modal_content">
-            <h2>Adicionar Trabalho</h2>
-            <p>aqui vao vir os treco</p>
-            <button onclick="fecharModal()">Fechar</button>
+            <h2 class="greeting_modal">Adicionar Trabalho</h2>
+            <h2 class="titulo_modal">TÍTULO</h2>
+            <input type="text" class="input_modal" placeholder="Ex: Redesing de Landing Page">
+            <h2 class="descricao_modal">DESCRIÇÃO</h2>
+            <textarea name="" id="" class="input_modal_desc" placeholder="Descreva o escopo do trabalho..."></textarea>
+            <h2 class="categoria_modal">CATEGORIA</h2>
+            <div class="btn_modal_wrapper">
+                <button class="ui_btn_modal">UI/UX</button>
+                <button class="frontend_btn_modal">Frontend</button>
+                <button class="web_desing_btn_modal">Web Desing</button>
+                <button class="backend_btn_modal">Backend</button>
+                <button class="video_btn_modal">Video</button>
+            </div>
+            <div class="btn_modal_wrapper_down">
+                <button class="outros_btn_modal">Outros</button>
+            </div>
+            <h2 class="titulo_modal">TIPO DE PAGAMENTO</h2>
+            <div class="modal_wrapper_payment">
+                <button class="btn_payment_project active">Por Projeto</button>
+                <button class="btn_payment_hour">Por Hora</button>
+            </div>
+            <button onclick="fecharModal()" class="btn_fechar">Fechar</button>
         </div>
     </div>
     <script>
@@ -97,6 +116,16 @@
             const modal = document.getElementById('modal_container');
             modal.classList.remove('mostrar');
         }
+
+        document.querySelectorAll('.btn_payment_project, .btn_payment_hour').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // remove active de todos
+                document.querySelectorAll('.btn_payment_project, .btn_payment_hour')
+                    .forEach(b => b.classList.remove('active'));
+                // coloca active no clicado
+                btn.classList.add('active');
+            });
+        });
     </script>
 </body>
 

@@ -209,10 +209,10 @@ body {
 /*-- BOTÃO EXPORT --*/
 .btn_export {
     display: flex;
-    align-items: center;   
-    justify-content: center;   
-    width: 100px ;  
-    height: 32px ;  
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 32px;
     background-color: #820AD1;
     border: none;
     border-radius: 4px;
@@ -224,9 +224,9 @@ body {
 }
 
 .btn_export img {
-    width: 16px ;
+    width: 16px;
     height: auto;
-    margin-right: 8px ; 
+    margin-right: 8px;
     filter: invert(1);
 }
 
@@ -295,15 +295,298 @@ body {
 }
 
 .modal_content {
-    background-color: #080c13; /* Cor igual ao seu fundo */
-    padding: 40px;
+    background-color: #1c1c1e;
+    padding: 20px 0px;
     border-radius: 15px;
-    border: 1px solid #313131; /* Borda cinza igual ao seu input */
-    width: 400px;
+    border: 1px solid #313131;
+    width: 550px;
+    height: 700px;
     text-align: center;
     color: white;
 }
 
+.btn_fechar {
+    border: 1px solid #313131;
+    background-color: transparent;
+    color: white;
+    border-radius: 15px;
+    padding: 10px;
+}
+
 .modal_overlay.mostrar {
     display: flex;
+}
+
+.greeting_modal {
+    font-size: 18px;
+    color: white;
+    padding: 6px;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #313131;
+    padding-left: 20px;
+}
+
+.titulo_modal {
+    font-size: 13px;
+    color: grey;
+    padding-top: 20px;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+
+.input_modal {
+    border: 0.2px solid grey;
+    background-color: #252525;
+    border-radius: 11px;
+    padding: 12px;
+    height: 42px;
+    width: 510px;
+    color: white;
+}
+
+.descricao_modal {
+    font-size: 13px;
+    color: grey;
+    padding-top: 20px;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+.input_modal_desc {
+    border: 0.2px solid grey;
+    background-color: #252525;
+    border-radius: 11px;
+    color: white;
+    line-height: normal;
+    vertical-align: middle;
+    padding: 12px;
+    width: 510px;
+    height: 100px;
+    resize: none;
+}
+
+.categoria_modal {
+    font-size: 13px;
+    color: grey;
+    padding-top: 20px;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+.btn_modal_wrapper {
+    display: flex;
+    padding-left: 20px;
+    gap: 12px;
+}
+
+.ui_btn_modal {
+    color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+    height: 31px;
+    border: 1px solid grey;
+    border-radius: 14px;
+    background-color: #252525;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.ui_btn_modal:hover {
+    color: #c4b5fd;
+    border: 1px solid #820AD1;
+}
+
+
+.frontend_btn_modal {
+    color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 31px;
+    border: 1px solid grey;
+    border-radius: 14px;
+    background-color: #252525;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.frontend_btn_modal:hover {
+    color: #c4b5fd;
+    border: 1px solid #820AD1;
+}
+
+.web_desing_btn_modal {
+    color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 31px;
+    border: 1px solid grey;
+    border-radius: 14px;
+    background-color: #252525;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.web_desing_btn_modal:hover {
+    color: #c4b5fd;
+    border: 1px solid #820AD1;
+}
+
+.backend_btn_modal {
+    color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 31px;
+    border: 1px solid grey;
+    border-radius: 14px;
+    background-color: #252525;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.backend_btn_modal:hover {
+    color: #c4b5fd;
+    border: 1px solid #820AD1;
+}
+
+.video_btn_modal {
+    color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 31px;
+    border: 1px solid grey;
+    border-radius: 14px;
+    background-color: #252525;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.video_btn_modal:hover {
+    color: #c4b5fd;
+    border: 1px solid #820AD1;
+}
+
+.btn_modal_wrapper_down {
+    padding-top: 10px;
+    display: flex;
+    padding-left: 20px;
+    gap: 12px;
+}
+
+.outros_btn_modal {
+    color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+    height: 31px;
+    border: 1px solid grey;
+    border-radius: 14px;
+    background-color: #252525;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.outros_btn_modal:hover {
+    color: #c4b5fd;
+    border: 1px solid #820AD1;
+}
+
+.titulo_modal {
+    font-size: 13px;
+    color: grey;
+    padding-top: 20px;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+/*--   PAYMENT MODAL BTN    --*/
+.modal_wrapper_payment {
+    align-items: center;
+    justify-content: center;
+    border: 1px solid grey;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 4px;
+    background-color: #252525;
+    display: flex
+}
+
+.btn_payment_project {
+    border: none;
+    background-color: transparent;
+    color: white;
+    padding: 8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+    text-align: center;
+    transition: all 0.15s;
+    width: 100%;
+}
+
+.btn_payment_project:hover {
+    color: #c4b5fd;
+    background-color: #820AD1;
+}
+
+.btn_payment_hour {
+    border: none;
+    background-color: transparent;
+    color: white;
+    padding: 8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+    text-align: center;
+    transition: all 0.15s;
+    width: 100%;
+}
+
+
+.btn_payment_hour:hover {
+    color: #c084fc;
+    background-color: #820AD1;
+}
+
+.btn_payment_hour.active,
+.btn_payment_project.active {
+    background: #7c3aed;
+    color: #fff;
 }
