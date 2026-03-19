@@ -601,3 +601,19 @@ body {
     background: #7c3aed;
     color: #fff;
 }
+
+/*--    PAYMENT TYPE    --*/
+.payment_wrapper {
+    background-color: #1c1c1e;
+    padding: 20px;
+    color: white;
+    display: flex;
+}
+
+.payment_valor {
+    font-size: 13px;
+    color: grey;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    padding: 20px;
+}
