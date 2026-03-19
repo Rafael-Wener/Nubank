@@ -89,7 +89,7 @@
             <textarea name="" id="" class="input_modal_desc" placeholder="Descreva o escopo do trabalho..."></textarea>
             <h2 class="categoria_modal">CATEGORIA</h2>
             <div class="btn_modal_wrapper">
-                <button class="ui_btn_modal">UI/UX</button>
+                <button class="ui_btn_modal active">UI/UX</button>
                 <button class="frontend_btn_modal">Frontend</button>
                 <button class="web_desing_btn_modal">Web Desing</button>
                 <button class="backend_btn_modal">Backend</button>
@@ -121,6 +121,16 @@
             btn.addEventListener('click', () => {
                 // remove active de todos
                 document.querySelectorAll('.btn_payment_project, .btn_payment_hour')
+                    .forEach(b => b.classList.remove('active'));
+                // coloca active no clicado
+                btn.classList.add('active');
+            });
+        });
+
+        document.querySelectorAll('.ui_btn_modal, .frontend_btn_modal, .web_desing_btn_modal, .backend_btn_modal, .video_btn_modal, .outros_btn_modal').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // remove active de todos
+                document.querySelectorAll('.ui_btn_modal, .frontend_btn_modal, .web_desing_btn_modal, .backend_btn_modal, .video_btn_modal, .outros_btn_modal')
                     .forEach(b => b.classList.remove('active'));
                 // coloca active no clicado
                 btn.classList.add('active');
