@@ -103,11 +103,21 @@
                 <button class="btn_payment_project active">Por Projeto</button>
                 <button class="btn_payment_hour">Por Hora</button>
             </div>
+            <div class="wrapper_payment">
             <h2 class="payment_valor">VALOR (R$/$)</h2>
+            <h2 class="payment_data">PRAZO DE ENTREGA
+            </h2>
+                </div>
             <div class="payment_wrapper">
-                <input type="text" placeholder="R$800.00">
+                <input type="text" class="input_valor" placeholder="R$800.00">
+                <input type="date" id="data_entrega" class="input_data">
             </div>
-            <button onclick="fecharModal()" class="btn_fechar">Fechar</button>
+
+            <div class="btn_wrapper_payment">
+                <button onclick="fecharModal()" class="btn_fechar">Fechar</button>
+                <button onclick="fecharModal()" class="btn_salvar">Salvar</button>
+            </div>
+
         </div>
     </div>
     <script>
@@ -120,6 +130,22 @@
             const modal = document.getElementById('modal_container');
             modal.classList.remove('mostrar');
         }
+
+
+        function alternarValor() {
+            const campoValor = document.getElementById('valor_projeto');
+            const checkbox = document.getElementById('check_indefinido');
+
+            if (checkbox.checked) {
+                campoValor.disabled = true;  // Bloqueia o campo
+                campoValor.value = "";       // Limpa o que foi digitado
+                campoValor.placeholder = "Indefinido";
+            } else {
+                campoValor.disabled = false; // Desbloqueia o campo
+                campoValor.placeholder = "R$ 0,00";
+            }
+        }
+
 
         document.querySelectorAll('.btn_payment_project, .btn_payment_hour').forEach(btn => {
             btn.addEventListener('click', () => {
@@ -140,6 +166,8 @@
                 btn.classList.add('active');
             });
         });
+
+
     </script>
 </body>
 
