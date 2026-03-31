@@ -84,9 +84,9 @@
         <div class="modal_content">
             <h2 class="greeting_modal">Adicionar Trabalho</h2>
             <h2 class="titulo_modal">TÍTULO</h2>
-            <input type="text" class="input_modal" placeholder="Ex: Redesing de Landing Page">
+            <input type="text" class="input_modal" placeholder="Ex: Redesing de Landing Page" id="nome_projeto">
             <h2 class="descricao_modal">DESCRIÇÃO</h2>
-            <textarea name="" id="" class="input_modal_desc" placeholder="Descreva o escopo do trabalho..."></textarea>
+            <textarea name="" id="" class="input_modal_desc" placeholder="Descreva o escopo do trabalho..." id="descricao"></textarea>
             <h2 class="categoria_modal">CATEGORIA</h2>
             <div class="btn_modal_wrapper">
                 <button class="ui_btn_modal active">UI/UX</button>
@@ -99,17 +99,17 @@
                 <button class="outros_btn_modal">Outros</button>
             </div>
             <h2 class="titulo_modal">TIPO DE PAGAMENTO</h2>
-            <div class="modal_wrapper_payment">
+            <div class="modal_wrapper_payment" id="tipo_cobranca">
                 <button class="btn_payment_project active">Por Projeto</button>
                 <button class="btn_payment_hour">Por Hora</button>
             </div>
             <div class="wrapper_payment">
-            <h2 class="payment_valor">VALOR (R$/$)</h2>
-            <h2 class="payment_data">PRAZO DE ENTREGA
-            </h2>
-                </div>
+                <h2 class="payment_valor">VALOR (R$/$)</h2>
+                <h2 class="payment_data">PRAZO DE ENTREGA
+                </h2>
+            </div>
             <div class="payment_wrapper">
-                <input type="text" class="input_valor" placeholder="R$800.00">
+                <input type="text" class="input_valor" id="valor_projeto" placeholder="R$800.00">
                 <input type="date" id="data_entrega" class="input_data">
             </div>
 
@@ -121,6 +121,38 @@
         </div>
     </div>
     <script>
+        async function salvarTrabalhos() {
+    const nome = document.getElementById('nome_projeto').value;
+    const valor = document.getElementById('valor_projeto').value;
+    const data_entrega = document.getElementById('data_entrega').value;
+    const descricao = document.querySelector('.input_modal_desc').value;
+    const btnCategoriaAtivo = document.querySelector('.btn_modal_wrapper .active, .btn_modal_wrapper_down .active');
+    const categoria = btnCategoriaAtivo ? btnCategoriaAtivo.innerText : "Geral";
+    const btnPagamentoAtivo = document.querySelector('.modal_wrapper_payment .active');
+    const tipo_cobranca = btnPagamentoAtivo ? btnPagamentoAtivo.innerText : "Projeto";
+
+    const response = await fetch('http://localhost:3000/job', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+            nome, 
+            valor, 
+            data_entrega, 
+            categoria, 
+            tipo_cobranca, 
+            descricao 
+        })
+    });
+
+    if (response.ok) {
+        const result = await response.json();
+        console.log("Salvo com Sucesso", result);
+
+        fecharModal();
+        location.reload();
+    }
+}
+
         function abrirModal() {
             const modal = document.getElementById('modal_container');
             modal.classList.add('mostrar');
@@ -131,43 +163,21 @@
             modal.classList.remove('mostrar');
         }
 
-
-        function alternarValor() {
-            const campoValor = document.getElementById('valor_projeto');
-            const checkbox = document.getElementById('check_indefinido');
-
-            if (checkbox.checked) {
-                campoValor.disabled = true;  // Bloqueia o campo
-                campoValor.value = "";       // Limpa o que foi digitado
-                campoValor.placeholder = "Indefinido";
-            } else {
-                campoValor.disabled = false; // Desbloqueia o campo
-                campoValor.placeholder = "R$ 0,00";
-            }
-        }
-
-
         document.querySelectorAll('.btn_payment_project, .btn_payment_hour').forEach(btn => {
             btn.addEventListener('click', () => {
-                // remove active de todos
                 document.querySelectorAll('.btn_payment_project, .btn_payment_hour')
                     .forEach(b => b.classList.remove('active'));
-                // coloca active no clicado
                 btn.classList.add('active');
             });
         });
 
         document.querySelectorAll('.ui_btn_modal, .frontend_btn_modal, .web_desing_btn_modal, .backend_btn_modal, .video_btn_modal, .outros_btn_modal').forEach(btn => {
             btn.addEventListener('click', () => {
-                // remove active de todos
                 document.querySelectorAll('.ui_btn_modal, .frontend_btn_modal, .web_desing_btn_modal, .backend_btn_modal, .video_btn_modal, .outros_btn_modal')
                     .forEach(b => b.classList.remove('active'));
-                // coloca active no clicado
                 btn.classList.add('active');
             });
         });
-
-
     </script>
 </body>
 
