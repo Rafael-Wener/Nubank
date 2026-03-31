@@ -54,7 +54,7 @@
             <!-- BODY -->
             <div class="content_body">
                 <h1 class="page_title">Trabalhos</h1>
-                <div class="tab_container">
+                <div class="tab_container" id="lista_trabalhos">
 
                     <button class="tab_item tab_item_active">Todos</button>
                     <button class="tab_item">Em andamento</button>
@@ -86,7 +86,8 @@
             <h2 class="titulo_modal">TÍTULO</h2>
             <input type="text" class="input_modal" placeholder="Ex: Redesing de Landing Page" id="nome_projeto">
             <h2 class="descricao_modal">DESCRIÇÃO</h2>
-            <textarea name="" id="" class="input_modal_desc" placeholder="Descreva o escopo do trabalho..." id="descricao"></textarea>
+            <textarea name="" id="" class="input_modal_desc" placeholder="Descreva o escopo do trabalho..."
+                id="descricao"></textarea>
             <h2 class="categoria_modal">CATEGORIA</h2>
             <div class="btn_modal_wrapper">
                 <button class="ui_btn_modal active">UI/UX</button>
@@ -115,43 +116,71 @@
 
             <div class="btn_wrapper_payment">
                 <button onclick="fecharModal()" class="btn_fechar">Fechar</button>
-                <button onclick="fecharModal()" class="btn_salvar">Salvar</button>
+                <button onclick="salvarTrabalhos()" class="btn_salvar">Salvar</button>
             </div>
 
         </div>
     </div>
     <script>
         async function salvarTrabalhos() {
+    alert("Opa! A função salvarTrabalhos foi chamada!"); // ADICIONE ESTA LINHA
     const nome = document.getElementById('nome_projeto').value;
-    const valor = document.getElementById('valor_projeto').value;
-    const data_entrega = document.getElementById('data_entrega').value;
-    const descricao = document.querySelector('.input_modal_desc').value;
-    const btnCategoriaAtivo = document.querySelector('.btn_modal_wrapper .active, .btn_modal_wrapper_down .active');
-    const categoria = btnCategoriaAtivo ? btnCategoriaAtivo.innerText : "Geral";
-    const btnPagamentoAtivo = document.querySelector('.modal_wrapper_payment .active');
-    const tipo_cobranca = btnPagamentoAtivo ? btnPagamentoAtivo.innerText : "Projeto";
+            const valor = document.getElementById('valor_projeto').value;
+            const data_entrega = document.getElementById('data_entrega').value;
+            const descricao = document.querySelector('.input_modal_desc').value;
+            const btnCategoriaAtivo = document.querySelector('.btn_modal_wrapper .active, .btn_modal_wrapper_down .active');
+            const categoria = btnCategoriaAtivo ? btnCategoriaAtivo.innerText : "Geral";
+            const btnPagamentoAtivo = document.querySelector('.modal_wrapper_payment .active');
+            const tipo_cobranca = btnPagamentoAtivo ? btnPagamentoAtivo.innerText : "Projeto";
 
-    const response = await fetch('http://localhost:3000/job', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 
-            nome, 
-            valor, 
-            data_entrega, 
-            categoria, 
-            tipo_cobranca, 
-            descricao 
-        })
-    });
+            const response = await fetch('http://localhost:3000/job', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    nome,
+                    valor,
+                    data_entrega,
+                    categoria,
+                    tipo_cobranca,
+                    descricao
+                })
+            });
 
-    if (response.ok) {
-        const result = await response.json();
-        console.log("Salvo com Sucesso", result);
+            if (response.ok) {
+                const result = await response.json();
+                console.log("Salvo com Sucesso", result);
 
-        fecharModal();
-        location.reload();
-    }
-}
+                fecharModal();
+                location.reload();
+            }
+        }
+
+
+        async function carregarTrabalhos() {
+            const response = await fetch('http://localhost:3000/job');
+            const trabalhos = await response.json();
+
+            const lista = document.getElementById('lista_trabalhos');
+            lista.innerHTML = "";
+
+            trabalhos.forEach(item => {
+                lista.innerHTML += `
+            <div class="job_card">
+                <div>
+                    <h3 style="margin:0; color:#820ad1;">${item.nome}</h3>
+                    <span style="font-size: 12px; color: #b3b3b3;">${item.categoria}</span>
+                    <br>
+                    <small style="color:#666;">Entrega: ${item.data_entrega}</small>
+                </div>
+                <div style="text-align: right;">
+                    <strong>R$ ${item.valor}</strong>
+                    <br>
+                    <span class="tag_status">${item.status || 'Em andamento'}</span>
+                </div>
+            </div>
+        `;
+            });
+        }
 
         function abrirModal() {
             const modal = document.getElementById('modal_container');
@@ -178,6 +207,8 @@
                 btn.classList.add('active');
             });
         });
+
+        window.onload = carregarTrabalhos;
     </script>
 </body>
 
