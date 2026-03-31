@@ -690,3 +690,74 @@ body {
     filter: invert(1); 
     cursor: pointer;
 }
+
+
+/*--    LISTA-TRABALHOS    --*/
+
+
+.job_card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(8, 12, 19, 0.699);
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+}
+
+
+.job_info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.job_nome {
+    color: white;
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.job_data {
+    color: white;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/*--   Botões laterais da lista_trabalho   --*/
+
+.job_wrapper {
+    margin-left: 20px;
+    margin-right: 20px;
+    gap: 20px;
+}
+.job_actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn_edit, 
+.btn-done {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn_edit { 
+    background: #000000; 
+    color: white; 
+}
+
+.btn_done { 
+    border: none;
+    border-radius: 4px;
+    padding: 4px;
+    background: #820ad1; 
+    color: white; 
+}
+
+.btn_done:hover { background: #6a08aa; }

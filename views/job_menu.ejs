@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="ptzbr">
 
 <head>
     <meta charset="UTF-8">
@@ -54,7 +54,7 @@
             <!-- BODY -->
             <div class="content_body">
                 <h1 class="page_title">Trabalhos</h1>
-                <div class="tab_container" id="lista_trabalhos">
+                <div class="tab_container">
 
                     <button class="tab_item tab_item_active">Todos</button>
                     <button class="tab_item">Em andamento</button>
@@ -73,6 +73,11 @@
                             <img src="/img/exportar.png" alt="">Criar
                         </button>
                     </div>
+                </div>
+            </div>
+
+            <div class="job_wrapper">
+                <div id="lista_trabalhos">
                 </div>
             </div>
 
@@ -122,9 +127,9 @@
         </div>
     </div>
     <script>
+
         async function salvarTrabalhos() {
-    alert("Opa! A função salvarTrabalhos foi chamada!"); // ADICIONE ESTA LINHA
-    const nome = document.getElementById('nome_projeto').value;
+            const nome = document.getElementById('nome_projeto').value;
             const valor = document.getElementById('valor_projeto').value;
             const data_entrega = document.getElementById('data_entrega').value;
             const descricao = document.querySelector('.input_modal_desc').value;
@@ -155,31 +160,41 @@
             }
         }
 
-
         async function carregarTrabalhos() {
-            const response = await fetch('http://localhost:3000/job');
-            const trabalhos = await response.json();
+            try {
+                const response = await fetch('/api/jobs');
+                const trabalhos = await response.json();
 
-            const lista = document.getElementById('lista_trabalhos');
-            lista.innerHTML = "";
+                const container = document.getElementById('lista_trabalhos');
+                container.innerHTML = '';
 
-            trabalhos.forEach(item => {
-                lista.innerHTML += `
-            <div class="job_card">
-                <div>
-                    <h3 style="margin:0; color:#820ad1;">${item.nome}</h3>
-                    <span style="font-size: 12px; color: #b3b3b3;">${item.categoria}</span>
-                    <br>
-                    <small style="color:#666;">Entrega: ${item.data_entrega}</small>
-                </div>
-                <div style="text-align: right;">
-                    <strong>R$ ${item.valor}</strong>
-                    <br>
-                    <span class="tag_status">${item.status || 'Em andamento'}</span>
-                </div>
-            </div>
-        `;
-            });
+                if (trabalhos.length === 0) {
+                    container.innerHTML = '<p>Nenhum trabalho cadastrado ainda.</p>';
+                    return;
+                }
+
+
+                trabalhos.forEach(job => {
+                    const card = document.createElement('div');
+                    card.className = 'job_card';
+
+                    card.innerHTML = `
+        <div class="job_info">
+            <h3 class="job_nome">${job.nome}</h3>
+            <span class="job_data">Entrega: ${new Date(job.data_entrega).toLocaleDateString('pt-BR')}</span>
+            <p class="job_categoria">${job.categoria} • ${job.valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
+        </div>
+        <div class="job_actions">
+            <button class="btn_edit" onclick="editarJob(${job.id})">Editar</button>
+            <button class="btn_done" onclick="concluirJob(${job.id})">Concluída</button>
+        </div>
+    `;
+                    container.appendChild(card);
+                });
+            } catch (error) {
+                console.error('Erro ao carregar:', error);
+                document.getElementById('lista_trabalhos').innerHTML = '<p>Erro ao carregar dados.</p>';
+            }
         }
 
         function abrirModal() {
@@ -208,7 +223,9 @@
             });
         });
 
+        carregarTrabalhos();
         window.onload = carregarTrabalhos;
+
     </script>
 </body>
 
