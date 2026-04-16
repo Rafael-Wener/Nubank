@@ -126,8 +126,13 @@
 
         </div>
     </div>
-    <script>
 
+
+
+
+
+
+    <script>
         async function salvarTrabalhos() {
             const nome = document.getElementById('nome_projeto').value;
             const valor = document.getElementById('valor_projeto').value;
@@ -151,14 +156,10 @@
                 })
             });
 
-            if (response.ok) {
-                const result = await response.json();
-                console.log("Salvo com Sucesso", result);
-
-                fecharModal();
-                location.reload();
-            }
+            fecharModal();
+            location.reload();
         }
+
 
         async function carregarTrabalhos() {
             try {
@@ -178,8 +179,7 @@
                     const card = document.createElement('div');
                     card.className = 'job_card';
 
-                    card.innerHTML = `
-        <div class="job_info">
+                    card.innerHTML = `<div class="job_info">
             <h3 class="job_nome">${job.nome}</h3>
             <span class="job_data">Entrega: ${new Date(job.data_entrega).toLocaleDateString('pt-BR')}</span>
             <p class="job_categoria">${job.categoria} • ${job.valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>

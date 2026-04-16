@@ -716,13 +716,12 @@ body {
     color: white;
     margin: 0;
     font-size: 1.2rem;
-    color: #333;
+    color: white;
 }
 
 .job_data {
-    color: white;
     font-size: 0.85rem;
-    color: #666;
+    color: #afafaf;
 }
 
 /*--   Botões laterais da lista_trabalho   --*/

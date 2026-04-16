@@ -15,7 +15,8 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon -e js,ejs,css server.js"
   },
   "dependencies": {
     "bcrypt": "^6.0.0",
@@ -25,5 +26,8 @@
     "express": "^5.2.1",
     "mongoose": "^9.2.1",
     "mysql2": "^3.17.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
   }
 }
